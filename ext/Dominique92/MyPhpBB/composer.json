@@ -1,0 +1,26 @@
+{
+	"name": "Dominique92/MyPhpBB",
+	"type": "phpbb-extension",
+	"description": "Add usefull tricks to phpBB",
+	"homepage": "https://github.com/Dominique92",
+	"version": "1.0",
+	"time": "2020-01-01",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Dominique Cavailhez",
+			"homepage": "https://github.com/Dominique92",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3",
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"display-name": "My phpBB",
+		"soft-require": {
+			"phpbb/phpbb": "~3.3"
+		}
+	}
+}

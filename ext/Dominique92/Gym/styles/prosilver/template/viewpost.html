@@ -1,0 +1,17 @@
+<!-- BEGIN topic -->
+<!-- BEGIN post -->
+	<!-- IF post.POST_ID == REQUEST_P -->
+		<h2>
+			{post.POST_SUBJECT}
+			<!-- IF U_MCP -->
+				<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+					title="Modifier la page {post.POST_SUBJECT}" class="button button-icon-only">
+					<i class="icon fa-pencil"></i>
+				</a>
+			<!-- ENDIF -->
+		</h2>
+		<div>{post.PRESENTATION}</div>
+		<br style="clear: both;" />
+	<!-- ENDIF -->
+<!-- END post -->
+<!-- END topic -->

@@ -1,0 +1,50 @@
+<table class="horaires">
+<!-- BEGIN topic -->
+		<!-- BEGIN post -->
+		<!-- IF post.GYM_HORAIRES -->
+		<tr>
+			<!-- IF not REQUEST_ID -->
+			<td>
+				<a href="viewtopic.php?p={post.POST_ID}">
+					{post.POST_SUBJECT}
+				</a>
+
+				<!-- IF REQUEST_ACTIVITE and post.GYM_NOTA -->
+					<br>{post.GYM_NOTA}
+				<!-- ENDIF -->
+			</td>
+			<!-- ENDIF -->
+
+			<td>
+				{post.HORAIRE_DEBUT} à {post.HORAIRE_FIN}
+			</td>
+
+			<!-- IF not REQUEST_LIEU -->
+			<td>
+				<a href="viewtopic.php?p={post.GYM_LIEU}">
+					{post.LIEU}
+				</a>
+			</td>
+			<!-- ENDIF -->
+
+			<!-- IF not REQUEST_ANIMATEUR -->
+			<td>
+				<a href="viewtopic.php?p={post.GYM_ANIMATEUR}">
+					{post.ANIMATEUR}
+				</a>
+			</td>
+			<!-- ENDIF -->
+
+			<!-- IF REQUEST_MOD -->
+			<td>
+				<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+					title="Modifier cette séance" class="button button-icon-only">
+					<i class="icon fa-pencil"></i>
+				</a>
+			</td>
+			<!-- ENDIF -->
+		</tr>
+		<!-- ENDIF -->
+		<!-- END post -->
+<!-- END topic -->
+</table>

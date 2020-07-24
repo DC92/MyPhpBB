@@ -1,0 +1,10 @@
+{
+	"name": "MyGPS",
+	"start_url": "index.html",
+	"display": "standalone",
+	"icons": [{
+		"src": "favicon.png",
+		"sizes": "225x225",
+		"type": "image/png"
+	}]
+}

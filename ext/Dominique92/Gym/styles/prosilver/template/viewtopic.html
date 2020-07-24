@@ -1,0 +1,213 @@
+<!-- INCLUDE header.html -->
+
+<script>
+	var annee_debut = {ANNEE_DEBUT};
+</script>
+
+<!-- BREADCRUMB -->
+<ul class="menu">
+	<!-- MENU ACCUEIL -->
+	<li style="background:#a69efd">
+		<a title="Retour à l'accueil" href=".">
+			Accueil
+		</a>
+
+		<!-- SOUS MENU DU TITRE -->
+		<ul style="background:#a69efd" class="submenu">
+			<!-- BEGIN topic -->
+			<!-- IF topic.FIRST_GYM_MENU -->
+			<li>
+				<a title="Voir la fiche {topic.TOPIC_TITLE}" href="viewtopic.php?t={topic.TOPIC_ID}">
+					{topic.TOPIC_TITLE}
+				</a>
+			</li>
+			<!-- ENDIF -->
+			<!-- END topic -->
+		</ul>
+	</li>
+
+	<!-- MENU ACTIVITES -->
+	<!-- BEGIN topic -->
+	<!-- IF topic.TOPIC_ID == 2 and GYM_ACTIVITE and GYM_ACTIVITE -->
+		<li><i class="icon fa-arrow-right"></i></li> <!-- Séparateur -->
+		<li style="background:#f3ce88">
+			<!-- RUBRIQUE -->
+			<!-- IF not REQUEST_P -->
+				{topic.TOPIC_TITLE}
+			<!-- ELSE -->
+				<a title="Voir la fiche {topic.TOPIC_TITLE}" href="viewtopic.php?t={topic.TOPIC_ID}">
+					{topic.TOPIC_TITLE}
+				</a>
+			<!-- ENDIF -->
+
+			<!-- SOUS MENU DE LA RUBRIQUE -->
+			<ul style="background:#f3ce88" class="submenu">
+				<!-- BEGIN post -->
+				<!-- IF post.GYM_MENU and post.TOPIC_FIRST_POST_ID != post.POST_ID -->
+				<li>
+					<a title = "Voir la fiche {post.POST_SUBJECT}" href="viewtopic.php?p={post.POST_ID}">
+						{post.POST_SUBJECT}
+					</a>
+				</li>
+				<!-- ENDIF -->
+				<!-- END post -->
+			</ul>
+		</li>
+	<!-- ENDIF -->
+	<!-- END topic -->
+
+	<!-- MENU ACTIVITE -->
+	<!-- BEGIN topic -->
+	<!-- BEGIN post -->
+	<!-- IF GYM_ACTIVITE and post.POST_ID == GYM_ACTIVITE -->
+		<li><i class="icon fa-arrow-right"></i></li>
+		<li style="background:#d987de">
+			<a title = "Voir la fiche {post.POST_SUBJECT}" href="viewtopic.php?p={post.POST_ID}">
+			{post.POST_SUBJECT}
+			</a>
+		</li>
+	<!-- ENDIF -->
+	<!-- END post -->
+	<!-- END topic -->
+
+	<!-- MENU RUBRIQUE -->
+	<!-- BEGIN topic -->
+	<!-- IF topic.FIRST_GYM_MENU and topic.TOPIC_ID == REQUEST_T -->
+		<li><i class="icon fa-arrow-right"></i></li>
+		<li style="background:#c7f793">
+			<!-- RUBRIQUE -->
+			<!-- IF not REQUEST_P -->
+				{topic.TOPIC_TITLE}
+			<!-- ELSE -->
+				<a title="Voir la fiche {topic.TOPIC_TITLE}" href="viewtopic.php?t={topic.TOPIC_ID}">
+					{topic.TOPIC_TITLE}
+				</a>
+			<!-- ENDIF -->
+
+			<!-- SOUS MENU DE LA RUBRIQUE -->
+			<!-- IF topic.COUNT > 1 -->
+			<ul style="background:#c7f793" class="submenu">
+				<!-- BEGIN post -->
+				<!-- IF post.GYM_MENU and post.TOPIC_FIRST_POST_ID != post.POST_ID -->
+				<li>
+					<a title = "Voir la fiche {post.POST_SUBJECT}" href="viewtopic.php?p={post.POST_ID}">
+						{post.POST_SUBJECT}
+					</a>
+				</li>
+				<!-- ENDIF -->
+				<!-- END post -->
+			</ul>
+			<!-- ENDIF -->
+		</li>
+	<!-- ENDIF -->
+	<!-- END topic -->
+
+	<!-- MENU PAGE COURANTE -->
+	<!-- BEGIN postrow -->
+	<!-- IF postrow.POST_ID == REQUEST_P -->
+		<li><i class="icon fa-arrow-right"></i></li>
+		<li style="background:#fc9baa">{postrow.POST_SUBJECT}</li>
+	<!-- ENDIF -->
+	<!-- END postrow -->
+</ul>
+
+<div class="page">
+	<!-- RUBRIQUE -->
+	<!-- BEGIN postrow -->
+		<!-- IF not REQUEST_P and postrow.POST_ID == postrow.TOPIC_FIRST_POST_ID and REQUEST_P != postrow.TOPIC_FIRST_POST_ID and postrow.GYM_MENU -->
+			<h2>
+				{postrow.POST_SUBJECT}
+				<!-- IF U_MCP -->
+					<a href="posting.php?mode=edit&f=2&p={postrow.POST_ID}"
+						title="Modifier la page {postrow.POST_SUBJECT}" class="button button-icon-only">
+						<i class="icon fa-pencil"></i>
+					</a>
+				<!-- ENDIF -->
+			</h2>
+			<div>{postrow.MESSAGE}</div>
+		<!-- ENDIF -->
+	<!-- END postrow -->
+
+	<!-- ACTIVITE -->
+	<!-- BEGIN topic -->
+	<!-- BEGIN post -->
+	<!-- IF post.POST_ID == GYM_ACTIVITE and post.RESUME -->
+		<h2>
+			<a href="viewtopic.php?p={post.POST_ID}">{post.POST_SUBJECT}</a>
+			<!-- IF U_MCP -->
+				<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+					title="Modifier la page {post.POST_SUBJECT}" class="button button-icon-only">
+					<i class="icon fa-pencil"></i>
+				</a>
+			<!-- ENDIF -->
+		</h2>
+		<div>{post.RESUME}</div>
+	<!-- ENDIF -->
+	<!-- END post -->
+	<!-- END topic -->
+
+	<!-- SUJET -->
+	<!-- BEGIN postrow -->
+		<!-- IF postrow.POST_ID == REQUEST_P -->
+			<h2>
+				{postrow.POST_SUBJECT}
+				<!-- IF U_MCP -->
+					<a href="posting.php?mode=edit&f=2&p={postrow.POST_ID}"
+						title="Modifier la page {postrow.POST_SUBJECT}" class="button button-icon-only">
+						<i class="icon fa-pencil"></i>
+					</a>
+				<!-- ENDIF -->
+			</h2>
+			<div>{postrow.MESSAGE}</div>
+			<!-- IF postrow.GYM_CERT -->
+				<div>
+					Cours certifié
+					<a target="_blank" href="https://www.oncorif.fr/prescriforme-lactivite-physique-sur-ordonnance-en-ile-de-france/">
+						Prescri’forme (CERT)
+					</a>
+				</div>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	<!-- END postrow -->
+
+	<!-- ANIMATRICES -->
+	<!-- BEGIN topic -->
+	<!-- BEGIN post -->
+		<!-- IF REQUEST_P and REQUEST_P == post.GYM_ACTIVITE and post.RESUME -->
+			<div>
+				<!-- IF U_MCP -->
+					<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+						title="Modifier la page {post.POST_SUBJECT}" class="button button-icon-only">
+						<i class="icon fa-pencil"></i>
+					</a>
+				<!-- ENDIF -->
+				{post.RESUME}
+			</div>
+		<!-- ELSEIF REQUEST_T == post.TOPIC_ID and post.PRESENTATION and not REQUEST_P -->
+			<div class="animatrice">
+				<h2>
+					<a href="viewtopic.php?p={post.POST_ID}">{post.POST_SUBJECT}</a>
+					<!-- IF U_MCP -->
+						<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+							title="Modifier la page {post.POST_SUBJECT}" class="button button-icon-only">
+							<i class="icon fa-pencil"></i>
+						</a>
+					<!-- ENDIF -->
+				</h2>
+
+				{post.PRESENTATION}
+				
+				<br/><div class="tooltip">
+					<i class="fa fa-clock-o"></i>
+					(INCLUDE ?template=horaires-pack&animateur={post.POST_SUBJECT})
+				</div>
+
+				<br/><a href="viewtopic.php?p={post.POST_ID}">Plus d'infos . . .</a>
+				<br style="clear:both;height:0" />
+			</div>
+		<!-- ENDIF -->
+	<!-- END post -->
+	<!-- END topic -->
+</div>
+
+<!-- INCLUDE footer.html -->

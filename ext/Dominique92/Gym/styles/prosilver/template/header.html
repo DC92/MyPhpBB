@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" type="image/jpg" href="{EXT_PATH}{T_THEME_PATH}/images/icon.jpg" />
+	<title><!-- IF TOPIC_TITLE -->{TOPIC_TITLE}<!-- ELSE -->Chavil'GYM<!-- ENDIF --></title>
+
+	<link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
+	<!-- INCLUDECSS icons.css -->
+	<!-- INCLUDECSS @Dominique92_Gym/stylesheet.css -->
+	<!-- INCLUDECSS @Dominique92_Gym/../assets/ol.css -->
+	<!-- INCLUDEJS @Dominique92_Gym/../assets/ol.js -->
+	<!-- INCLUDEJS {T_JQUERY_LINK} -->
+	<!-- INCLUDEJS @Dominique92_Gym/index.js -->
+	{$STYLESHEETS}
+</head>
+
+<body class="gym gym-{SCRIPT_NAME}">
+	<!-- LOGO FÉDÉ -->
+	<a class="logo" title="Sport Santé" href="https://www.sport-sante.fr/" target="_BLANK">
+		<img alt="EPGV" src="{EXT_PATH}{T_THEME_PATH}/images/logo.png">
+	</a>
+
+<div class="banniere">
+	<div class="edit-user">
+		<!-- IF S_USER_LOGGED_IN -->
+			{S_USERNAME}
+			<ul><li>
+					<a href="ucp.php?i=ucp_profile&mode=reg_details">{L_PROFILE}</a>
+				</li><li>
+					<a href="viewtopic.php?p=93">Mode d'emploi</a>
+				</li><li>
+					<a href="viewforum.php?f=2">Rubriques</a>
+				</li><li>
+					<a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a>
+			</li></ul>
+		<!-- ELSE -->
+			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" class="button button-icon-only">
+				<i class="icon fa-pencil"></i>
+			</a>
+		<!-- ENDIF -->
+	</div>
+
+	<form action="{U_SEARCH}" method="get" class="recherche">
+		<fieldset>
+			<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}"
+				class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+			<button class="button button-search" type="submit" title="{L_SEARCH}">
+				<i class="icon fa-search"></i><span class="sr-only">{L_SEARCH}</span>
+			</button>
+			{S_SEARCH_HIDDEN_FIELDS}
+		</fieldset>
+	</form>
+
+	<h1>
+		<a title="Retour à l'accueil" href=".">
+			{SITENAME}<span> {SITE_DESCRIPTION}</span>
+		</a>
+	</h1>
+</div>

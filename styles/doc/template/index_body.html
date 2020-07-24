@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	phpBB style name: doc
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by: Dominique Cavailhez ( https://github.com/Dominique92 )
+-->
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	{META}
+	<title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
+
+
+	<link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
+	<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
+	<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet">
+	<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+		<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<!-- ENDIF -->
+	<!--[if lte IE 9]>
+		<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<![endif]-->
+
+	{$STYLESHEETS}
+</head>
+<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}">
+	<!-- EVENT index_body_markforums_before -->
+	<hr/>
+	<!-- EVENT overall_footer_copyright_prepend -->
+
+	<script src="{T_JQUERY_LINK}"></script>
+	<!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
+	<script src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
+	{$SCRIPTS}
+</body>
+</html>

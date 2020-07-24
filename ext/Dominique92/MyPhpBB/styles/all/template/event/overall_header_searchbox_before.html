@@ -1,0 +1,21 @@
+<!-- IF 0 -->Clickable banner<!-- ENDIF -->
+
+<style>
+	#site-description { /* Remove previous one */
+		display: none;
+	}
+	.site-description a {
+		display: inline;
+		color: white;
+		text-decoration: none;
+	}
+</style>
+
+<div class="site-description">
+	<a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">
+		<span class="logo"><span class="site_logo"></span></span>
+		<h1>{SITENAME}</h1>
+		<p>{SITE_DESCRIPTION}</p>
+	</a>
+	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+</div>

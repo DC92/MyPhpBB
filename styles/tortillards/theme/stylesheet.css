@@ -1,0 +1,585 @@
+/*  phpBB3 Style Sheet
+	--------------------------------------------------------------
+	Style name:			chemineur
+	Based on style:		prosilver
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		phpBB Group ( https://www.phpbb.com/ )
+	Modified by:		Dominique Cavailhez © 2014
+	--------------------------------------------------------------
+*/
+@import url("../../prosilver/theme/stylesheet.css");
+
+/* A REVOIR */
+
+/* Page */
+body {
+	padding: 0;
+	min-height: 100%;
+	background-color: grey;
+}
+#wrap {
+	border: none;
+	border-radius: 0;
+	max-width: 1119px;
+	padding: 0 !important;
+	margin: auto;
+}
+/*
+.forumbg {
+	padding: 0;
+}
+*/
+
+/* Inhibe l'affichage du descripteur de forum */
+.forums .list-inner {
+	color: transparent;
+}
+.forums .list-inner a {
+	position: relative;
+	top: 15px;
+}
+.forums .list-inner img {
+	position: relative;
+	top: 8px;
+}
+
+/* Masquages divers */
+.birthday-list,
+.statistics {
+	display: none;
+}
+
+/* Bandeau */
+.headerbar {
+	background-image: url("images/banniere.jpg");
+	height: 68px;
+	margin: 0 !important;
+	padding: 0;
+	border-radius: 0;
+}
+.logo,
+#search-box {
+	display: none;
+}
+#site-description {
+	float: none;
+	width: auto;
+	text-align: center;
+	padding: 15px;
+}
+#site-description h1 {
+	font-size: 28px;
+	display: inline;
+}
+#site-description p {
+	font-size: 16px;
+	display: inline;
+}
+/*
+
+					/*
+					#page-body > p {
+						display: none;
+					}
+					.logo,
+					.logo:hover {
+						color: white;
+						display: inline !important;
+						float: none;
+						font-size: 24px;
+					}
+					*/
+
+/* Accueil */
+#page-body > p { /*Enlève les commentaires prosilver */
+	display: none;
+}
+
+/* Carte */
+#map {
+	border: 5px solid white;
+	wmargin: 6px 10px 0 5px;
+	wmargin-color: white;
+}
+@media screen and (max-width: 700px) {
+	#map {
+		border: 0 !important;
+	}
+}
+
+/* viewtopic ligne */
+.viewtopic_ligne #map,
+.viewtopic_ligne .post {
+	border: 0;
+	border-radius: 0;
+	width: 50%;
+	padding: 0;
+}
+
+/*
+.header {
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	background-image: url('./images/cellpic3.gif');
+}
+.header dt {
+	color: white !important;
+}
+.forabg {
+	padding: 0;
+}
+*/
+/* Masquages divers */
+#qr_postform, /* Réponse rapide*/
+.report-icon, .info-icon, .postprofile, /* Viewtopic / post */
+.submit-buttons .button1, /* Bouton Apperçu */
+.submit-buttons .button2, /* Bouton Sauvegarder brouillon */
+.sub-panels,
+#options-panel,
+.action-bar.top {
+	display: none !important;
+}
+#attach-panel,
+.button1.default-submit-action {
+	display: inline-block !important;
+}
+.postbody {
+	width: 100%;
+}
+.online {
+	background-image: none;
+}
+
+/* viewtopic ligne */
+.hovered {
+	background-color: pink;
+}
+
+/*
+.viewtopic-ligne-troncon {
+	font-size: 12px;
+	border-bottom: 1px dashed grey;
+	float: none;
+	text-align: left;
+}
+.viewtopic-ligne-troncon * {
+	margin: 0.5em;
+}
+.viewtopic-ligne-troncon lh {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.viewtopic-ligne-troncon li {
+	text-indent: 10px;
+}
+.bas-troncon {
+	text-indent: 0 !important;
+}
+.bas-troncon .bouton {
+	float: right;
+}
+.bouton {
+	padding: 0 2px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+}
+
+					.section-viewtopic #container-map {
+						wfloat: right;
+						WWWWwidth: 50% ;
+						wheight: 400px;
+						wborder-left: solid 5px white;
+						wborder-right: solid 5px white;
+					}
+					@media screen and (max-width: 500px) {
+						.wwwsection-viewtopic #map {
+							float: none;
+							margin: 0 auto;
+							border: 0;
+							width: 100%;
+						}
+					}
+
+					/*
+					.viewtopic-ligne .header {
+						padding: 3px;
+						margin: 0;
+					}
+					.viewtopic-ligne .header a {
+						font-weight: bold;
+						color: white;
+					}
+					.viewtopic-ligne-pagination,
+					/***** posting-ligne *****/
+					/*
+					#editor_help p {
+						line-height: 1em;
+					}
+					#editor_help p:first-child {
+						font-weight: bold;
+					}
+					*/
+					/***********************************************************************************
+										DCMM DELELE
+										#wrapheader, #wrapcentre, #wrapfooter {
+											max-width: 1099px;
+											min-width: 726px;
+											width: auto;
+											padding: 0 10px;
+										}
+										#wrapheader {
+											max-width: 1119px;
+											min-width: 746px;
+											padding: 0;
+										}
+										h1 {
+											/*Forum name * /
+											margin-top: 7px;
+											font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+											margin-right: 0;
+											font-weight: bold;
+											font-size: 24px;
+										}
+										.row1 {
+											background-color: #ECECEC;
+											padding: 4px;
+										}
+
+										/*Centre et pied de page* /
+										.stat-block > h3 { /*Enlève les stats prosilver * /
+											display: none;
+										}
+										#page-body,
+										#page-footer {
+											margin: 10px 10px 0 10px;
+										}
+										.headerspace {
+											margin: 0 0 10px 0;
+										}
+										.stat-block,
+										.headerspace,
+										#page-footer {
+											background-color: #CADCEB;
+											text-align: center;
+											clear: both;
+										}
+										.headerspace * {
+											margin: 0;
+											border-color: #CADCEB;
+										}
+										.stat-block > p {
+											margin: 0;
+										}
+
+
+										/*Accueil * /
+										.section-index > div {
+											background: url('images/coin_ciel.jpg'); 
+											background-repeat: no-repeat ;
+											background-color: #5072BF !important;
+										}
+										.accueil_modif_titre {
+											font-family: Tahoma;
+											color: #ff0;
+											text-indent: 5px;
+											font-size: 18px;
+											font-weight: bold;
+											text-decoration: underline;
+											margin-bottom: 5px;
+										}
+										.accueil_modif_texte,
+										.accueil_commande,
+										.accueil_commande a {
+											margin: 5px;
+											font-family: Times New Roman;
+											font-size: 16px;
+											color: #fff;
+											text-indent: 5px;
+											text-align: left;
+										}
+										.accueil_modif_texte a {
+											font-family: Arial;
+											color: #ff0;
+											font-weight: bold;
+										}
+										.accueil_modif_texte a:hover {
+											color: #fff;
+											background-color: #000;
+										}
+										.accueil_modif_texte img {
+											position: relative; bottom: -4px;
+										}
+
+										.section-index #map {
+											width : 600px;
+											height: 600px;
+										}
+										#etiquette h1 span {
+											color: #105289;
+											font-size: 16px;
+										}
+										#etiquette h3 {
+											text-transform: none;
+										}
+
+										.accueil_news {
+											margin-bottom: 10px;
+										}
+										.accueil_news td {
+											vertical-align: top;
+										}
+
+
+										/*Points * /
+										.viewtopic-point {
+											background: url('images/pierre.jpg'); 
+										}
+										.viewtopic-point > #wrap {
+											background-color: transparent;
+										}
+										.pagination,
+										.action-bar {
+											float: left;
+											background-color: white;
+											margin: 1px;
+											padding: 2px;
+										}
+
+										.section-viewtopic #map {
+											width : 400px;
+											height: 400px;
+										}
+
+										/*Cadres d'affichage * /
+										#etiquette {
+											margin-left: auto;
+											margin-right: auto;
+											margin-bottom: 20px;
+											border-spacing: 0;
+										}
+										#etiquette td {
+											padding: 0;
+										}
+										#etiquette .hg, #etiquette .hd, #etiquette .bg, #etiquette .bd {
+											height: 36px; min-width: 36px;
+											background: url('cadres/etiquette_bg.png');
+										}
+										#etiquette .hm, #etiquette .bm {
+											background: url('cadres/etiquette_v.png');
+											text-align: right;
+										}
+										#etiquette .md {
+											vertical-align: bottom;
+										}
+										#etiquette .md img {
+											position: relative; right: -27px; bottom: -5px;
+										}
+										#etiquette .mg, #etiquette .md {
+											background: url('cadres/etiquette_h.png');
+										}
+										#etiquette .hd {
+											background-position: right top;
+										}
+										#etiquette .bg {
+											background-position: left bottom;
+										}
+										#etiquette .bd, #etiquette .md, #etiquette .bm {
+											background-position: right bottom;
+										}
+										#etiquette .mm {
+											background-color: white;
+										}
+										/ *---* /
+										.point-post {
+											width: 100%;
+										}
+										.point-post td {
+											vertical-align: middle;
+											padding: 5px;
+										}
+										.point-post table {
+											margin-left: auto; margin-right: auto;
+										}
+										/ *---* /
+										.postit {
+											border-spacing: 0;
+										}
+										.postit td {
+											padding: 0 !important;
+										}
+										.postit .hg, .postit .hd, .postit .bg, .postit .bd {
+											height: 2px; min-width: 2px;
+											background: url('cadres/postit_bg.png');
+										}
+										.postit .bd {
+											height: 32px; min-width: 32px;
+										}
+										.postit .md {
+											vertical-align: bottom;
+										}
+										.postit .md img {
+											position: relative; right: -20px; bottom: -5px;
+										}
+										.postit .hm, .postit .bm {
+											background: url('cadres/postit_v.png');
+											text-align: right;
+											font-family: Arial;
+											font-size: 10px;
+										}
+										.postit .mg, .postit .md {
+											background: url('cadres/postit_h.png');
+										}
+										.postit .hd {
+											background-position: right top;
+										}
+										.postit .bg {
+											background-position: left bottom;
+										}
+										.postit .bd, .postit .md, .postit .bm {
+											background-position: right bottom;
+										}
+										.postit .mm {
+											background-color: #F3E358;
+										}
+										.postit .mm p {
+											position: relative; left: 12px; top: 5px;
+											font-family: Arial;
+											font-size: 12px;
+											color: #210;
+											text-indent: 10px;
+											margin-bottom: 0;
+										}
+										.postit .mm .titre {
+											font-size: 18px;
+											font-weight: bold;
+										}
+										.postit .bm p {
+											font-size: 10px;
+											float:right;
+											position: relative; left: 10px;
+										}
+										/ *---* /
+										.photo {
+											border-spacing: 0;
+											margin: 5px 0;
+										}
+										.photo td {
+											padding: 0 !important;
+										}
+										.photo .hg, .photo .hd, .photo .bg, .photo .bd {
+											height: 10px; min-width: 10px;
+											background: url('cadres/photo_bg.png');
+										}
+										.photo .bd {
+											height: 14px; min-width: 14px;
+										}
+										.photo .hm, .photo .bm {
+											background: url('cadres/photo_v.png');
+										}
+										.photo .bd p {
+											height: 12px;
+											position: relative;
+											top: -12px;
+											left: -10px;
+										}
+										.photo .md {
+											vertical-align: bottom;
+										}
+										.photo .md img {
+											position: relative; top: -3px; right: -5px;
+										}
+										.photo .mg, .photo .md {
+											background: url('cadres/photo_h.png');
+										}
+										.photo .hd {
+											background-position: right top;
+										}
+										.photo .bg {
+											background-position: left bottom;
+										}
+										.photo .bd, .photo .md, .photo .bm {
+											background-position: right bottom;
+										}
+										.photo .hm p, .photo .bm p  {
+											font-family: Verdana;
+											color: #a00;
+											font-size: 10px;
+										}
+										.photo .hm p {
+											font-weight: bold;
+											position: relative; left: -5px;
+											margin: 0;
+										}
+										.photo .bm p {
+											text-align: right;
+											position: relative; top: -2px; right: 10px;
+											margin: 2px;
+										}
+										.photo-comment {
+											margin: 10px;
+										}
+										.photo-comment span {
+											background-color: #FFFFFF;
+											padding: 3px;
+										}
+
+										/ *
+										.section-viewtopic_point,
+										.section-posting_new,
+										.section-posting_entete,
+										.section-posting_comment {
+											background: url('images/pierre.jpg');
+										}
+
+										h1 {
+											font-size: 24px;
+										}
+										.titles {
+											font-size: 22px;
+										}
+										h2 {
+											font-size: 20px;
+										}
+										h3, input, textarea, a.topictitle {
+											font-size: 16px;
+										}
+										th , a.forumlink, div.postbody, p.breadcrumbs, p.datetime, .gen, .btnmain, .btnlite, .btnbbcode, .btnfile   {
+											font-size: 14px;
+										}
+										p, select, h4, .gensmall, .nav, .cat, .genmed, .postbody, .postauthor, .postdetails {
+											font-size: 12px;
+										}
+										.error {
+											padding: 0;
+										}
+
+										p.forumdesc {
+											display: none;
+										}
+										.error {
+											background-color: black;
+										}
+
+										/*Bouton jaune * /
+										.bouton,
+										.bouton:hover,
+										.bouton:link,
+										.bouton:visited,
+										.bouton:active {
+											font-family: 'Lucida Grande', Verdana, Helvetica, Arial, sans-serif;
+											font-size: 13px;
+											font-weight: bold;
+											color: #000;
+											background-color: #fe0;
+											border: 3px outset #dc0;
+											padding: 1px 5px;
+											margin-left: 10px ;
+											cursor: pointer;
+											text-decoration: none;
+										}
+										* /
+
+										***********************************************************************************/

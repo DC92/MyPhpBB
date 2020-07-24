@@ -1,0 +1,108 @@
+<!-- INCLUDE header.html -->
+
+<ul class="menu">
+	<!-- BEGIN topic -->
+	<!-- IF topic.FIRST_GYM_MENU -->
+	<li style="background:{topic.COULEUR}">
+		<a href="viewtopic.php?t={topic.TOPIC_ID}" title = "Voir la fiche {topic.TOPIC_TITLE}">
+			{topic.TOPIC_TITLE}
+		</a>
+
+		<!-- IF topic.COUNT > 1 -->
+		<ul style="background:{topic.COULEUR}" class="submenu">
+			<!-- BEGIN post -->
+			<!-- IF post.GYM_MENU and post.TOPIC_FIRST_POST_ID != post.POST_ID -->
+				<li>
+				<a title = "Voir la fiche {post.POST_SUBJECT}" href="viewtopic.php?p={post.POST_ID}">
+					{post.POST_SUBJECT}
+				</a>
+				</li>
+			<!-- ENDIF -->
+			<!-- END post -->
+		</ul>
+		<!-- ENDIF -->
+	</li>
+	<!-- ENDIF -->
+	<!-- END topic -->
+
+	<!-- IF U_MCP -->
+	<li>
+		<a title="Ajouter une rubrique au menu principal" href="posting.php?mode=post&f=2">
+			<i class="icon fa-commenting-o" aria-hidden="true"></i>
+		</a>
+	</li>
+	<!-- ENDIF -->
+</ul>
+
+<div class="page">
+	<div class="slideshow">  
+		<ul>
+			<!-- //TODO automatiser à partir du répertoire -->
+			<li><img src="slides/1.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/2.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/3.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/4.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/5.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/6.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/7.jpg" width="400" height="300" alt="Slide " /></li>
+			<li><img src="slides/8.jpg" width="400" height="300" alt="Slide " /></li>
+		</ul>  
+	</div>
+
+	<div>
+	<!-- BEGIN topic -->
+		<!-- BEGIN post -->
+		<!-- IF post.ACCUEIL -->
+			<!-- IF U_MCP -->
+			<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+				title="Modifier la page {post.POST_SUBJECT}">
+				<i class="icon fa-pencil"></i></a>
+			<!-- ENDIF -->
+			{post.ACCUEIL}
+		<!-- ENDIF -->
+		<!-- END post -->
+	<!-- END topic -->
+	</div>
+</div>
+
+<h1 id="evenements">
+	La vie du club
+	<!-- IF U_MCP -->
+	<a title="Créer un nouvel évènement" href="posting.php?mode=reply&amp;f=2&t=7">
+		<i class="icon fa-commenting-o"></i>
+	</a>
+	<!-- ENDIF -->
+</h1>
+
+<!-- BEGIN topic -->
+<!-- BEGIN post -->
+<!-- IF post.ACTUALITE -->
+<div class="page">
+	<h2>
+		<!-- IF post.DATE -->
+			{post.DATE}:
+		<!-- ENDIF -->
+		<a href="viewtopic.php?p={post.POST_ID}">{post.POST_SUBJECT}</a>
+		<!-- IF U_MCP -->
+		<a href="posting.php?mode=edit&f={post.FORUM_ID}&p={post.POST_ID}"
+			title="Modifier l'évènement {post.NOM}" class="button button-icon-only">
+			<i class="icon fa-pencil"></i>
+		</a>
+		<!-- ENDIF -->
+	</h2>
+	<div>
+		{post.LIEU}
+		<!-- IF post.GYM_HEURE > 0 -->
+			à {post.HORAIRE_DEBUT}
+		<!-- ENDIF -->
+		<!-- IF post.ANIMATEUR -->
+			avec {post.ANIMATEUR}
+		<!-- ENDIF -->
+		<div>{post.ACTUALITE}</div>
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- END post -->
+<!-- END topic -->
+
+<!-- INCLUDE footer.html -->

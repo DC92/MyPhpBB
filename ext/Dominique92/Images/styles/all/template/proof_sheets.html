@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>{TOPIC_TITLE}</title>
+
+	<link rel="stylesheet" href="assets/MySlider/MySlider.css?<?=filemtime('assets/MySlider/MySlider.css')?>">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="assets/MySlider/MySlider.js?<?=filemtime('assets/MySlider/MySlider.js')?>"></script>
+</head>
+
+<body>
+	<!-- BEGIN post -->
+		<p>
+			<!-- IF post.PREVIOUS_POST -->
+				<a href="viewtopic.php?t={TOPIC_ID}&pp1={post.PREVIOUS_POST}&pp2={post.POST_ID}&template=@Dominique92_Images/proof_sheets.html">
+				{post.PREVIOUS_POST}<->{post.POST_ID}
+				</a> :
+			<!-- ENDIF -->
+			{post.POST_SUBJECT}
+		</p>
+		<p>
+			<!-- BEGIN slide -->
+			<!-- IF slide.PREVIOUS_ATTACH -->
+				<a href="viewtopic.php?t={TOPIC_ID}&pa1={post.PREVIOUS_ATTACH}&pa2={post.POST_MSG_ID}&template=@Dominique92_Images/proof_sheets.html">
+					{slide.PREVIOUS_ATTACH}:{slide.POST_MSG_ID}
+
+			<!-- ENDIF -->
+				<img title="{slide.POST_SUBJECT} {slide.MESSAGE} {slide.ATTACH_COMMENT}"
+					src="download/file.php?id={slide.ATTACH_ID}&size=100" />
+			<!-- END slide -->
+		</p>
+	<!-- END post -->
+</body>
+</html>

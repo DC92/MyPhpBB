@@ -1,0 +1,173 @@
+//TODO créer /LOG automatiquement + index.html
+//TODO voir pourquoi les champs de saisie du curseur de l'exemple ont une , au lieu d'un point
+
+Migration MyOl (alpages.info)
+==============
+Mymap -> Map
+ol.layer.LayerVectorURL -> layerVectorURL
+
+BUGS CHEMINEUR soldes par chem4
+===============================
+Import WRIC : bbcode ne marche pas, en particulier les liens ce qui est génant.
+Diapo : ne s'arrête pas sur touche escape
+Pouvoir trier les posts WRIC
+Import WRI: importer texte fiche ?
+Barmenu: Enveloppe message trop basse dans Chrome
+Ajouter l'origine des pages importées chemineur
+Diaporama pleine page ? En particulier sur mobile
+	Echap par une touche sur mobile pas pratique
+EDIT.log => Segmenter par jour
+Import complet points WRI
+	Rechercher dans les points externes / dedoublons autres sites
+Pouvoir citer un WRIC
+	Tri des WRIC (actuellement en bas de page) => date par défaut + déplaçable
+Récupérer les smileys tout ronds de WRI
+https://www.phpbb.com/support/docs/en/3.2/ug/upgradeguide/general_conversion/
+
+//TODO BUGS CHEMINEUR
+=====================
+Voir forum Evolutions & bugs sur chemineur.fr
+Suppression fichier attach ne supprime pas l'attachment.
+WRI : Le numéro de point demandé "5156" est introuvable dans notre base (chalet des ministres)
+Pas de choix de forum sur rando pedestre
+Posting line: pour édit : mettre marqueurs lignes au dessus des icones
+Clear Ajax carte quand ajoute/supprime un lien (les 2 icones restent sur la carte)
+Supression de fiche => viewforum.php?f=0 => Le forum que vous avez tenté d’atteindre n’existe pas.
+Pourquoi ne retourne t'il pas un mail de création d'user à l'admin ?
+Pourquoi post_attachment = 0 si on a une image ?
+Click sur une icone chem2 plante
+Image interdite dans texte
+	http://chemineur.fr/viewtopic.php?t=10411#p29247
+Interface VTTRACK
+	Icônes KO
+	Priorité pas aux orris !!
+	Reprendre interface sur chem3
+
+ARCHI
+=====
+//TODO-END http://jsbeautifier.org/ & http://jshint.com
+//TODO-END replace var by const / let
+
+//TODO BEST CHEMINEUR
+=====================
+cookie = ;SameSite=Strict
+	header('Set-Cookie: cross-site-cookie=name; SameSite=None; Secure');
+	Or if your host is already updated to 7.3, you can use:
+	setcookie('cross-site-cookie', 'name', ['samesite' => 'None', 'secure' => true]);
+Cross-Origin Read Blocking (CORB) blocked cross-origin response http://dc9.fr/chemineur/ with MIME type text/html. See https://www.chromestatus.com/feature/5629709824032768 for more details.
+Le sélecteur de couche chem/wri/c2C/... pourrait ne pas sélectionner les sites externes par défaut.
+Meteo sur chem
+Stockage images sur plus d'1 répertoire => ? plugin ?
+Mettre les media print dans print.css
+CSS bug chem cadre liens sur largeur fenêtre petite
+Choix type trace GPS
+Editeur Optim geom dès le chargement
+Appli méteo suisse
+Pouvoir inclure : Les caractères ( ) sont interdits dans les URLs, il faut les remplacer respectivement par %28 et %29
+Erreur type de caractères randos Lozerre
+Récup trace diaporamas + chemins chem2
+Récup auteur photo // Retrouver le nom du "poster_id" : $vars['attachment']['poster_id']
+Date des clichés < 1970 ??? (pas d'UNIX time) => Utiliser la date EXIF (éditée) pour les clichés ???
+EDIT.log => Trace supprimer le sujet
+Eviter d'afficher les jpg non autorisés insérés dans le texte.
+	Rechercher les liens vers une image dans le texte (Google image)
+	Interface WRI V2->V3 	http://v2.chemineur.fr/prod/chem/json.php?site=c2c&bbox=-6.921386718749999%2C38.75408327579141%2C20.32470703125%2C51.69979984974196Doublons ou icones fantômes
+Améliorer référencement (-> Prat communal !)
+ext/GeoBB : ajouter les coordonnées au template print
+Posting: Purger les points des [*=line] à la saisie (include fichier dans leaflet) ?
+Import references: osm overpass, LDP
+	Import LDP: view-source:http://www.lacsdespyrenees.com/kml-Bielsa.kml
+Revenir à la page où on était quand on se connecte
+	Login redirection () GeoBB316
+		//GEO login		trigger_error('INSECURE_REDIRECT', E_USER_ERROR);
+				$u_login_logout = append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=login&amp;redirect='.$request->server('REQUEST_URI', '')); //GEO Redirige sur la page initiale apres le login
+		//GEO login		$u_login_logout = append_sid("{$phpbb_root_path}ucp.$phpEx", 'mode=login');
+		+++ logout
+Ajouter bouton permutation sur page point chem
+	View film + permutation
+coordonnéés V2 ? WRI: http://chemineur.fr/point/prc618
+BUG http://www.refuges.info/point/4965/ => http://chemineur.fr/point/20110623090825
+CHEMINEUR => http://jean.louis.negre.free.fr/indebaug.htm
+
+AIDE CHEM
+=========
+Un sujet est actif quand il y a eu des contributions récentes.
+Création / Edition de traces
+Ici, la COPPA est la "Children's Online Privacy Protection Act", une loi américaine pour protéger la vie privée des mineurs de moins de 13 ans. J'essayerai d'enlever les mentions dans les formulaires.
+Consulter l'historique des éditions
+
+UPGRADE CHEMINEUR
+=================
+todo avant upgrade chem
+	CHEM2 : [first=point][/point][form=point][/form] => [first=Point][/first][form=Point][/form][view=Point][/view]	
+	TODO récupérer les fichiers chem2
+		C koi chem3/files/attach ?
+	chem3 : les liens photos dans le post ont donné lieu à des attachement ???? (géré dans le posting.php)
+	Fiche type Point : carte IGN, commune, ...²
+	//TODO reprendre Fonctionnalités et bugs http://chemineur.fr/viewforum.php?f=70 
+	Retester ALPAGES avec cette version
+Fermer le site
+Vider cache
+phpadmin export database
+Cpanel -> Bases de données MySQL
+Créer BDD
+Ajouter un nouvel utilisateur à la base de données
+phpadmin import database
+Copier PhpBB3 sauf doc
+Copier repertoires de GeoBB
+Copier cmem3/files
+Mise à jour config.php
+Lancer admin -> Upgrade
+Supprimer répertoire install
+Désactiver styles et extensions /supprimer les données (y compris collapsible cactégories)
+	Lancer /adm -> Personnaliser -> Gérer les extensions
+	Désactiver et supprimer les données sauf GeoBB
+	Supprimer les ext/* sauf GeoBB
+Purger contenu de /assets /ext/phpbb /ext/Dominique92 /styles /install* /README
+Modifier forum_desc diaporamas : [all=point][view=diapo][exclude=tortillards] => [view=diapo][/view]
+Rediriger dc9.fr/chemineur dans WRI
+
+ACCEPTER MODERATEUR //TODO vrai sur ALPAGES ???
+===================
+Administration -> MEMBRES ET GROUPES -> cocher -> Activer -> Envoyer
+Administration -> Gérer les membres -> formulaire : Groupes -> Ajouter ce membre au groupe : Modérateurs globaux -> Définir comme groupe par défaut
+
+
+TODO WRI
+========
+conf_privee : "???" => '???'
+? FORM.wri LABEL { /* sans la classe WRI, ca fait foirer le forum PHPBB , et oui */
+? historique posts phpbb wri (ext/...)
+Mettre le zip forum
+/gps favicon 144px min
+	vues\api\doc\index.html : nte de zone au points à => nte de zone auX points à
+	vues\api\doc\index.html : inclus dans la bbos => X
+	Enlever dernier RC des fichiers
+	Paramétres inclusion posts dans points -> config.php
+cookie = ;SameSite=Strict
+	header('Set-Cookie: cross-site-cookie=name; SameSite=None; Secure');
+	Or if your host is already updated to 7.3, you can use:
+	setcookie('cross-site-cookie', 'name', ['samesite' => 'None', 'secure' => true]);
+	Cross-Origin Read Blocking (CORB) blocked cross-origin response http://dc9.fr/chemineur/ with MIME type text/html. See https://www.chromestatus.com/feature/5629709824032768 for more details.
+Méteo ne marche pas sur mobile (status 0 / vide)
+Possibilité d'agrandir la météo sur mobiles
+Créer les massifs manquants à chemineur
+Inclure scan_liens.php dans /ressources/outils/...
+Mettre le format date sur tous les users
+L'interprétation du "nouveau bbcode" plus riche semble moins bien passer coté site pour ce qui est des quotes
+	https://dom.refuges.info/forum/viewtopic.php?f=4&t=6335&p=19629
+Déraciner le wiki / le mettre dans le forum
+Faire une fiche de tests
+
+WRI API
+=======
+Langage ACP / ADM, ... (menu haut page)
+Bug remontée MultiPolygon / default : null
+Erreur: sur geom vide dans un polynome
+Durée cache réglable
+Passage template <?...?> des vues/api // vues/api => repli si pas de $polygone->geometrie !!
+
+AIDE TEST
+=========
+MultiPolygon multiple => WRI massif 3116 //TODO pas dans la base de tests WRI
+MultiPolygon avec trou => WRI massif 3127

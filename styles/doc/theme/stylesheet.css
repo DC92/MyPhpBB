@@ -1,0 +1,20 @@
+/*  phpBB3 Style Sheet
+	--------------------------------------------------------------
+	Style name:			doc
+	Based on style:		prosilver
+	Original author:	Dominique Cavailhez © 2019
+	--------------------------------------------------------------
+*/
+
+@import url("../../prosilver/theme/stylesheet.css");
+
+/* index.php */
+.nav-main li:nth-child(2), /* Navbar FAQ  */
+.section-posting #poll-panel-tab { /* Sondages */
+	display: none !important;
+}
+
+/* posting.php */
+.automatic-document h1 {
+	color: black;
+}

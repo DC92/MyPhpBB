@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+© Dominique Cavailhez 2019
+https://github.com/Dominique92/MyOl
+Based on https://openlayers.org
+-->
+<html>
+<head>
+	<title>My Openlayers simple example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- IE related -->
+	<script nomodule src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
+
+	<!-- Openlayers -->
+	<link  href="ol/ol.css" type="text/css" rel="stylesheet">
+	<script src="ol/ol.js"></script>
+
+	<!-- Recherche par nom -->
+	<link  href="geocoder/ol-geocoder.css" type="text/css" rel="stylesheet">
+	<script src="geocoder/ol-geocoder-debug.js"></script>
+
+	<!-- My Openlayers -->
+	<link  href="myol.css" type="text/css" rel="stylesheet">
+	<script src="myol.js"></script>
+
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#map {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+
+	<script>
+		// Must be after the <div> tag
+		new ol.Map({
+			target: 'map',
+			controls: controlsCollection({
+				geoKeys: {
+					ign: 'hcxdz5f1p9emo4i1lch6ennl', // Get your own (free) IGN key at http://professionnels.ign.fr/ign/contrats
+					thunderforest: 'ee751f43b3af4614b01d1bce72785369', // Get your own (free) THUNDERFOREST key at https://manage.thunderforest.com
+					bing: 'ArLngay7TxiroomF7HLEXCS7kTWexf1_1s1qiF7nbTYs2IkD3XLcUnvSlKbGRZxt' // Get your own (free) BING key at https://www.microsoft.com/en-us/maps/create-a-bing-maps-key
+					// SwissTopo : You need to register your domain in https://shop.swisstopo.admin.ch/fr/products/geoservice/swisstopo_geoservices/WMTS_info
+				}
+			})
+		});
+	</script>
+</body>
+</html>

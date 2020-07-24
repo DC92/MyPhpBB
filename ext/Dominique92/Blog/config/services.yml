@@ -1,0 +1,12 @@
+services:
+    Dominique92.Blog.listener:
+        class: Dominique92\Blog\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '@auth'
+            - '@language'
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,12 @@
+services:
+    Dominique92.Gym.listener:
+        class: Dominique92\Gym\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '@auth'
+            - '@language'
+        tags:
+            - { name: event.listener }

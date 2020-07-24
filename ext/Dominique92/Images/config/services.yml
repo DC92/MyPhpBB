@@ -1,0 +1,9 @@
+services:
+    Dominique92.Images.listener:
+        class: Dominique92\Images\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@request'
+            - '@template'
+        tags:
+            - { name: event.listener }

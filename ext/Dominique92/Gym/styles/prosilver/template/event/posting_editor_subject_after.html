@@ -1,0 +1,145 @@
+<!-- IF FORUM_ID == 2 -->
+	Publication dans :
+	Menu <input type="checkbox" name="gym_menu"
+	<!-- IF GYM_MENU == 'on' -->
+		checked="checked"
+	<!-- ENDIF -->
+	/> &nbsp;
+
+	Horaires <input type="checkbox" name="gym_horaires"
+	<!-- IF GYM_HORAIRES == 'on' -->
+		checked="checked"
+	<!-- ENDIF -->
+	/> &nbsp;
+
+	Ordre <input name="gym_ordre_menu" type="number" style="width:40px" value="{GYM_ORDRE_MENU}"> &nbsp;
+
+	<br/>Pour être publié en haut de la page d'accueil, le texte doit comporter une balise [accueil]
+	<br/>Pour être publié dans la partie Actualité de la page d'accueil, le texte doit comporter une balise [actualite]
+<!-- ENDIF -->
+
+<!-- IF FORUM_ID == 2 -->
+	<br/><br/>
+	Activité:
+	<select name="gym_activite">
+		<option>?</option>
+		<!-- BEGIN liste_2 -->
+			<option value="{liste_2.POST_ID}"
+				<!-- IF liste_2.POST_ID == GYM_ACTIVITE -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_2.POST_SUBJECT}
+			</option>
+		<!-- END liste_2 -->
+	</select> &nbsp;
+
+	Lieu:
+	<select name="gym_lieu">
+		<option>?</option>
+		<!-- BEGIN liste_3 -->
+			<option value="{liste_3.POST_ID}"
+				<!-- IF liste_3.POST_ID == GYM_LIEU -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_3.POST_SUBJECT}
+			</option>
+		<!-- END liste_3 -->
+	</select> &nbsp;
+
+	Animation:
+	<select name="gym_animateur">
+		<option>?</option>
+		<!-- BEGIN liste_4 -->
+			<option value="{liste_4.POST_ID}"
+				<!-- IF liste_4.POST_ID == GYM_ANIMATEUR -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_4.POST_SUBJECT}
+			</option>
+		<!-- END liste_4 -->
+	</select> &nbsp;
+
+	Cert:
+	<select name="gym_cert">
+		<option value="0"></option>
+		<option value="1">CERT</option>
+	</select><br/><br/>
+
+	Deuxième ligne de la case horaire <input name="gym_nota" type="text" style="width:400px" value="{GYM_NOTA}"><br/><br/>
+
+	<select name="gym_jour" id="gym_jour" onchange="displayInputCalendar(this)">
+		<!-- BEGIN liste_jours -->
+			<option value="{liste_jours.NO}"
+				<!-- IF liste_jours.NO == GYM_JOUR -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_jours.VALEUR}
+			</option>
+		<!-- END liste_jours -->
+	</select> &nbsp;
+
+	<select name="gym_heure">
+		<!-- BEGIN liste_heures -->
+			<option value="{liste_heures.VALEUR}"
+				<!-- IF liste_heures.VALEUR == GYM_HEURE -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_heures.VALEUR}
+			</option>
+		<!-- END liste_heures -->
+	</select> h
+	<select name="gym_minute">
+		<!-- BEGIN liste_minutes -->
+			<option value="{liste_minutes.VALEUR}"
+				<!-- IF liste_minutes.VALEUR == GYM_MINUTE -->
+					selected="selected"
+				<!-- ENDIF -->
+			>
+				{liste_minutes.VALEUR}
+			</option>
+		<!-- END liste_minutes -->
+	</select> &nbsp;
+
+	durée
+	<input name="gym_duree_heures" type="number" step="0.25" min ="1" style="width:60px"
+	value="<!-- IF GYM_DUREE_HEURES -->{GYM_DUREE_HEURES}<!-- ELSE -->1<!-- ENDIF -->">h
+	<input name="gym_duree_jours" type="number" style="width:60px" value="{GYM_DUREE_JOURS}">jour(s)
+	<br/><br/>
+
+	Période : scolaire
+	<input type="checkbox" name="gym_scolaire" id="gym_scolaire" onchange="displayInputCalendar(this)"
+	<!-- IF GYM_SCOLAIRE != 'off'-->
+		checked="checked"
+	<!-- ENDIF -->
+	/><br/>
+
+	<script>
+		var annee_debut = {ANNEE_DEBUT};
+	</script>
+
+	<table id="edit_semaines"
+		class="calendrier"
+		data-jour="{GYM_JOUR}"
+		data-semaines="{GYM_SEMAINES}"
+	>
+		<tr id="cal_mois_7"><td>Aout</td></tr>
+		<tr id="cal_mois_8"><td>Septembre</td></tr>
+		<tr id="cal_mois_9"><td>Octobre</td></tr>
+		<tr id="cal_mois_10"><td>Novembre</td></tr>
+		<tr id="cal_mois_11"><td>Décembre</td></tr>
+		<tr id="cal_mois_0"><td>Janvier</td></tr>
+		<tr id="cal_mois_1"><td>Février</td></tr>
+		<tr id="cal_mois_2"><td>Mars</td></tr>
+		<tr id="cal_mois_3"><td>Avril</td></tr>
+		<tr id="cal_mois_4"><td>Mai</td></tr>
+		<tr id="cal_mois_5"><td>Juin</td></tr>
+		<tr id="cal_mois_6"><td>Juillet</td></tr>
+	</table>
+
+	<!-- INCLUDEJS @Dominique92_Gym/index.js -->
+<!-- ENDIF -->

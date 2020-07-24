@@ -1,0 +1,10 @@
+/*  phpBB3 Style Sheet
+	--------------------------------------------------------------
+	Style name:			chemineur
+	Based on style:		prosilver
+	Original author:	Dominique Cavailhez © 2018
+	--------------------------------------------------------------
+*/
+
+@import url("../../prosilver/theme/stylesheet.css");
+@import url("../../../ext/Dominique92/GeoBB/styles/chemineur/theme/stylesheet.css");

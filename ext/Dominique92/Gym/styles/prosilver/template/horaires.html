@@ -1,0 +1,72 @@
+<!-- BEGIN topic -->
+<div class="horaires j{topic.GYM_JOUR}">
+	<!-- IF topic.GYM_HORAIRES -->
+	<div style="margin-left:calc((10% - 60px) * 0{topic.GYM_JOUR} + 1em)">
+		{topic.GYM_JOUR_LITERAL}
+	</div>
+	<!-- ENDIF -->
+
+	<table style="
+		margin-left:calc((10% - 60px) * 0{topic.GYM_JOUR});
+		background:{topic.COULEUR_FOND};
+		border-color:{topic.COULEUR_BORD};
+	">
+		<!-- BEGIN post -->
+		<!-- IF post.GYM_HORAIRES -->
+		<tr>
+			<!-- IF not REQUEST_ID -->
+			<td>
+				<a href="viewtopic.php?p={post.POST_ID}">{post.POST_SUBJECT}</a>
+				<!-- IF post.GYM_CERT -->
+					<a href="https://www.oncorif.fr/prescriforme-lactivite-physique-sur-ordonnance-en-ile-de-france/"
+						target="_blank" class="cert" title="Cours certifié Prescri’forme"
+					>CERT</a>
+				<!-- ENDIF -->
+
+				<!-- IF REQUEST_ACTIVITE and post.GYM_NOTA -->
+					<br>{post.GYM_NOTA}
+				<!-- ENDIF -->
+			</td>
+			<!-- ENDIF -->
+
+			<td>
+				{post.HORAIRE_DEBUT} à {post.HORAIRE_FIN}
+			</td>
+
+			<!-- IF not REQUEST_LIEU -->
+			<td>
+				<a href="viewtopic.php?p={post.GYM_LIEU}">
+					{post.LIEU}
+				</a>
+			</td>
+			<!-- ENDIF -->
+
+			<!-- IF not REQUEST_ANIMATEUR -->
+			<td>
+				<a href="viewtopic.php?p={post.GYM_ANIMATEUR}">
+					{post.ANIMATEUR}
+				</a>
+			</td>
+			<!-- ENDIF -->
+
+			<!-- IF REQUEST_MOD -->
+			<td>
+				<a href="posting.php?mode=edit&f=2&p={post.POST_ID}"
+					title="Modifier cette séance" class="button button-icon-only">
+					<i class="icon fa-pencil"></i>
+				</a>
+			</td>
+			<!-- ENDIF -->
+		</tr>
+		<!-- ENDIF -->
+		<!-- END post -->
+	</table>
+</div>
+<!-- END topic -->
+
+<!-- IF REQUEST_MOD -->
+	<a href="posting.php?mode=reply&f=2&t=1" title="Ajouter une séance"
+		class="button button-icon-only" style="float:right">
+		<i class="icon fa-commenting-o"></i>
+	</a>
+<!-- ENDIF -->

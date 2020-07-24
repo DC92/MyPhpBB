@@ -1,0 +1,43 @@
+body {
+	margin: 2em;
+}
+@media print {
+	body {
+		margin: 0;
+	}
+	#language,
+	.skiptranslate {
+		display: none;
+	}
+}
+@page { 
+	margin: 15mm;
+}
+body > div {
+	break-inside: avoid;
+}
+h1 {
+	text-align: center;
+}
+p {
+	margin: 0.3em;
+	text-align: justify;
+	text-indent: 1.5em;
+}
+.image {
+	float: left;
+	text-indent: 1em;
+}
+body > div:before,
+p:before {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+.copyright {
+	margin: 1em;
+	text-align: center;
+	font-size: small;
+}
